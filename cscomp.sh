@@ -7,7 +7,7 @@ if [ ! "$1" == "" ]; then
   if [[ "$RESP" == "" ]]; then
       printf "${GRE}Success!${NC}\nRunning Program:\n"
       echo "======================"
-      echo $(mono $1.exe)
+      mono $1.exe
       find . -name '*.exe' -delete
   else
       printf "${RED}Looks like you have errors...${NC}\n"
@@ -16,5 +16,5 @@ if [ ! "$1" == "" ]; then
 
   fi
 else
-  printf "${RED}Please provide an existing java file without the .cs extension. (./cscomp.sh yourcsfile)${NC}\n"
+  printf "${RED}Please provide an existing C# file without the .cs extension. (./cscomp.sh yourcsfile)${NC}\n"
 fi

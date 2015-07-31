@@ -10,7 +10,7 @@ printf "${RED}Giving permissions to:${NC}\n"
 echo "======================"
 for filename in *.sh;
   do echo "${filename}";
-  cp $filename ~/.scripts/$
+  cp $filename ~/.scripts/$filename
 done
 if [ -f ~/.bashrc ]; then
   echo 'export PATH=$PATH:~/.scripts' >> ~/.bashrc
