@@ -11,11 +11,14 @@ echo "======================"
 for filename in *.sh;
   do echo "${filename}";
   cp $filename ~/.scripts/$filename
+  chmod u+x ~/.scripts/$filename
 done
 if [ -f ~/.bashrc ]; then
   echo 'export PATH=$PATH:~/.scripts' >> ~/.bashrc
+  source ~/.bashrc
 else
   echo 'export PATH=$PATH:~/.scripts' >> ~/.bash_profile
+  source ~/.bash_profile
 fi
 echo "======================"
 echo "Done!";
