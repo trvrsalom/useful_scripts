@@ -13,6 +13,11 @@ for filename in *.sh;
   cp $filename ~/.scripts/$filename
   chmod u+x ~/.scripts/$filename
 done
+for filename in *.py;
+  do echo "${filename}";
+  cp $filename ~/.scripts/$filename
+  chmod u+x ~/.scripts/$filename
+done
 if [ -f ~/.bashrc ]; then
   echo 'export PATH=$PATH:~/.scripts' >> ~/.bashrc
   source ~/.bashrc
