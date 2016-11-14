@@ -20,9 +20,11 @@ for filename in *.py;
 done
 if [ -f ~/.bashrc ]; then
   echo 'export PATH=$PATH:~/.scripts' >> ~/.bashrc
+  for filename in *.sh; do echo alias ${filename%.*}=""${filename}"">>~/.bashrc; done;
   source ~/.bashrc
 else
   echo 'export PATH=$PATH:~/.scripts' >> ~/.bash_profile
+  for filename in *.sh; do echo alias ${filename%.*}=""${filename}"">>~/.bash_profile; done;
   source ~/.bash_profile
 fi
 echo "======================"
